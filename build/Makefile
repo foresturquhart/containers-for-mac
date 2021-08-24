@@ -17,7 +17,7 @@ all:
 	@sed -n 's/^\([a-zA-Z_-]*\):.*\#\# \(.*\)/\1\t\2/p' $(MAKEFILE_LIST) | awk -F\t '{ printf "\033[96m\xe2\x80\xba \033[1m%s\033[0m\t%s\n", $$1, $$2 }'
 
 run: build ## Build and run the client and server binaries
-	$(OUT_DIR)/hvc & $(OUT_DIR)/hvs
+	@$(OUT_DIR)/hvc & $(OUT_DIR)/hvs
 
 build: clean ## Build debug client and server binaries
 	@BASE_DIR="$(BASE_DIR)" BUILD_TAG="$(BUILD_TAG)" BUILD_REF="$(BUILD_REF)" BUILD_DATE="$(BUILD_DATE)" $(MAKE) -C "$(SRC_DIR)/hvc" build

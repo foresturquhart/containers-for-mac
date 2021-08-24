@@ -22,7 +22,7 @@ all:
 	@sed -n 's/^\([a-zA-Z_-]*\):.*\#\# \(.*\)/\1\t\2/p' $(MAKEFILE_LIST) | awk -F\t '{ printf "\033[96m\xe2\x80\xba \033[1m%s\033[0m\t%s\n", $$1, $$2 }'
 
 run: build ## Build and run the server binary
-	$(OUT_DIR)/$(OUT_BIN)
+	@$(OUT_DIR)/$(OUT_BIN)
 
 build: clean ## Build the debug server binary
 	@swift build -c debug --build-path=$(SWIFT_DIR) $(SWIFTC_FLAGS) $(LINKER_FLAGS)

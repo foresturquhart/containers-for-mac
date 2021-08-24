@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package cfm;
+
+message Test {
+    string query = 1;
+}

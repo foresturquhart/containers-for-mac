@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"github.com/davecgh/go-spew/spew"
+	"hvc/pkg/hvc"
+)
 
 func main() {
-	fmt.Println("hvc")
+	spew.Dump(hvc.Test())
 }
